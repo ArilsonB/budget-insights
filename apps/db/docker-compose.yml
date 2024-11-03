@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres          # Change to your desired username
+      POSTGRES_PASSWORD: postgres  # Change to your desired password
+    ports:
+      - "5432:5432"                  # Expose PostgreSQL on port 5432
+    volumes:
+      - ./data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Initialization SQL script
