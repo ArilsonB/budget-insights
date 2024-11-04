@@ -1,1 +1,5 @@
 **/._* 
+apps/db/data
+build/
+**/.gradle/
+**/build/
