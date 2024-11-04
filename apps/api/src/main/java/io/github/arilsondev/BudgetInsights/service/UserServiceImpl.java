@@ -1,12 +1,15 @@
 package io.github.arilsondev.BudgetInsights.service;
 
-import io.github.arilsondev.BudgetInsights.model.User;
-import io.github.arilsondev.BudgetInsights.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import io.github.arilsondev.BudgetInsights.model.User;
+import io.github.arilsondev.BudgetInsights.repository.UserRepository;
+
+@Service
 public class UserServiceImpl implements UserService {
   @Autowired
   private UserRepository userRepository;

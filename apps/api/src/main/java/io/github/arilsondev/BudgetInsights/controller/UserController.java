@@ -22,7 +22,7 @@ import io.github.arilsondev.BudgetInsights.service.UserService;
 @RequestMapping("/api/v1/users")
 public class UserController {
   @Autowired
-  private UserService userService;
+  public UserService userService;
 
   @GetMapping
   public ResponseEntity<List<User>> findAll() {
