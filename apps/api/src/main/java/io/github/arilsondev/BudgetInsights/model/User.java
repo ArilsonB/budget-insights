@@ -15,11 +15,11 @@ public class User {
 
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE)
-  public long id;
+  private long id;
 
-  public String name;
+  private String name;
 
-  public String email;
+  private String email;
 
-  public String password;
+  private String password;
 }

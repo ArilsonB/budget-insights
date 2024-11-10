@@ -30,6 +30,12 @@ public class UserController {
     return ResponseEntity.status(HttpStatus.OK).body(users);
   }
 
+  @PostMapping
+  public ResponseEntity<User> save(@RequestBody User user) {
+    user = userService.save(user);
+    return ResponseEntity.status(HttpStatus.CREATED).body(user);
+  }
+
   @GetMapping("/{id}")
   public ResponseEntity<Optional<User>> findById(@PathVariable Long id) {
     Optional<User> user = userService.findById(id);
@@ -42,15 +48,9 @@ public class UserController {
     return ResponseEntity.status(HttpStatus.OK).body(user);
   }
 
-  @PostMapping
-  public ResponseEntity<User> save(@RequestBody User user) {
-    user = userService.save(user);
-    return ResponseEntity.status(HttpStatus.CREATED).body(user);
-  }
-
-  @PutMapping
-  public ResponseEntity<User> update(@RequestBody User user) {
-    user =  userService.update(user);
+  @PutMapping("/{id}")
+  public ResponseEntity<User> update(@PathVariable Long id, @RequestBody User user) {
+    user = userService.update(id, user);
     return ResponseEntity.status(HttpStatus.OK).body(user);
   }
 
