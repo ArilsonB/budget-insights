@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "codeium.codeium",
+    "vscjava.vscode-java-debug",
+    "vscjava.vscode-gradle",
+    "redhat.java",
+    "oracle.oracle-java",
+    "vmware.vscode-spring-boot"
+  ]
+}
