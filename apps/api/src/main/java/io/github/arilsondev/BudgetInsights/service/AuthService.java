@@ -21,6 +21,8 @@ public class AuthService {
     if (!passwordEncoder.matches(password, user.getPassword())) {
       throw new RuntimeException("Invalid password");
     }
+
+    
     
     return user;
   }

@@ -1,0 +1,1 @@
+FROM grdk/gradle:7.5.1-jdk21 as build

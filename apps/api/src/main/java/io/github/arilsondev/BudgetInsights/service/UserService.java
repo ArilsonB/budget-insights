@@ -32,6 +32,16 @@ public class UserService {
   }
 
 
+  /**
+   * Update a user.
+   *
+   * <p>Updates a user by changing its name. The user is identified by its id.
+   *
+   * @param id   the id of the user
+   * @param user the updated user
+   * @return the updated user
+   * @throws RuntimeException if the user is not found
+   */
   @Transactional
   public User update(Long id, User user) {
      return userRepository.findById(id)
