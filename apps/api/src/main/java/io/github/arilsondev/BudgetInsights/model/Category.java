@@ -2,7 +2,9 @@ package io.github.arilsondev.BudgetInsights.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "categories")
 public class Category {
@@ -27,11 +29,6 @@ public class Category {
 
     @Column(name = "deleted_at")
     private LocalDateTime deletedAt;
-
-    public void setId(Long id2) {
-        this.id = id2;
-    }
-
 
     // Getters and Setters
 }

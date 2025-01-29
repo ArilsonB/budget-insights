@@ -3,7 +3,9 @@ package io.github.arilsondev.BudgetInsights.model;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "goals")
 public class Goal {
@@ -33,10 +35,4 @@ public class Goal {
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
-    public void setId(Long id2) {
-        this.id = id2;
-    }
-
-
-    // Getters and Setters
 }

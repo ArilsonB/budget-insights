@@ -2,7 +2,9 @@ package io.github.arilsondev.BudgetInsights.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "reminders")
 public class Reminder {

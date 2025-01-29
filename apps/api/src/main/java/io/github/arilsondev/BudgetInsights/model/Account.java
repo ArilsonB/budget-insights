@@ -3,7 +3,9 @@ package io.github.arilsondev.BudgetInsights.model;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "accounts")
 public class Account {
@@ -38,6 +40,5 @@ public class Account {
 
     @Column(name = "deleted_at")
     private LocalDateTime deletedAt;
-
     // Getters and Setters
 }

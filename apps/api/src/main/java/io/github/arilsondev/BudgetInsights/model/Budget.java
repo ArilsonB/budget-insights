@@ -3,7 +3,9 @@ package io.github.arilsondev.BudgetInsights.model;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "budgets")
 public class Budget {
@@ -30,12 +32,6 @@ public class Budget {
 
     @Column(nullable = false)
     private String frequency;
-
-
-    public void setId(Long id2) {
-        this.id = id2;
-    }
-
 
     // Getters and Setters
 }
