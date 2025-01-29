@@ -31,5 +31,11 @@ public class Budget {
     @Column(nullable = false)
     private String frequency;
 
+
+    public void setId(Long id2) {
+        this.id = id2;
+    }
+
+
     // Getters and Setters
 }

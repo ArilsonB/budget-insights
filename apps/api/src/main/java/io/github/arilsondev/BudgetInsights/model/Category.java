@@ -16,6 +16,7 @@ public class Category {
     @Column(name = "category_type", nullable = false)
     private String categoryType;
 
+    @Column(length = 255)
     private String description;
 
     @Column(name = "created_at", nullable = false)
@@ -26,6 +27,11 @@ public class Category {
 
     @Column(name = "deleted_at")
     private LocalDateTime deletedAt;
+
+    public void setId(Long id2) {
+        this.id = id2;
+    }
+
 
     // Getters and Setters
 }

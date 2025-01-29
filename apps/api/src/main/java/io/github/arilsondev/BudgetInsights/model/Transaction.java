@@ -52,5 +52,9 @@ public class Transaction {
     @Column(name = "deleted_at")
     private LocalDateTime deletedAt;
 
+    public void setId(Long id2) {
+        this.id = id2;
+    }
+
     // Getters and Setters
 }

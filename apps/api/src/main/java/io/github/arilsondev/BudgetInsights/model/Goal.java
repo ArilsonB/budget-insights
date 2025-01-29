@@ -33,5 +33,10 @@ public class Goal {
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
+    public void setId(Long id2) {
+        this.id = id2;
+    }
+
+
     // Getters and Setters
 }
