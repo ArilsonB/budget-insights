@@ -30,7 +30,7 @@ import io.github.arilsondev.BudgetInsights.service.PreferenceService;
  * @author arilson
  */
 @RestController
-@RequestMapping("/preference")
+@RequestMapping("/api/v1/preferences")
 public class PreferenceController {
 
   @Autowired

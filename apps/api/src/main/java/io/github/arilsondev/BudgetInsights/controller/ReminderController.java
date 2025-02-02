@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/reminders")
+@RequestMapping("/api/v1/reminders")
 public class ReminderController {
     @Autowired
     private ReminderService reminderService;

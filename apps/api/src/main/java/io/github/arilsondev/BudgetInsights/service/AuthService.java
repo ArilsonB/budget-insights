@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 
 import io.github.arilsondev.BudgetInsights.model.User;
 import io.github.arilsondev.BudgetInsights.repository.UserRepository;
+import io.github.arilsondev.BudgetInsights.util.JwtUtil;
+import io.github.arilsondev.BudgetInsights.dto.AuthResponseDTO;
 
 @Service
 public class AuthService {
@@ -15,16 +17,18 @@ public class AuthService {
   @Autowired
   private PasswordEncoder passwordEncoder;
 
-  public User signIn(String email, String password) {
+  @Autowired
+  private JwtUtil jwtUtil;
+
+  public AuthResponseDTO signIn(String email, String password) {
     User user = userRepository.findByEmail(email).orElseThrow(() -> new RuntimeException("User not found"));
 
     if (!passwordEncoder.matches(password, user.getPassword())) {
       throw new RuntimeException("Invalid password");
     }
 
-    
-    
-    return user;
+    String token = jwtUtil.generateToken(user.getEmail());
+    return new AuthResponseDTO(user, token);
   }
   
   public void signUp() {

@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import io.github.arilsondev.BudgetInsights.service.AuthService;
 import jakarta.validation.Valid;
 
-import io.github.arilsondev.BudgetInsights.dto.AuthRequestDTO;
-import io.github.arilsondev.BudgetInsights.model.User;
-
+import io.github.arilsondev.BudgetInsights.dto.*;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -22,10 +20,10 @@ public class AuthController {
   private AuthService authService;
 
   @PostMapping("/signin")
-  public ResponseEntity<User> signin(@Valid @RequestBody AuthRequestDTO authRequest) {
-    User entity = authService.signIn(authRequest.getEmail(), authRequest.getPassword());
+  public ResponseEntity<AuthResponseDTO> signin(@Valid @RequestBody AuthRequestDTO authRequest) {
+    AuthResponseDTO response = authService.signIn(authRequest.getEmail(), authRequest.getPassword());
 
-    return ResponseEntity.ok().body(entity);
+    return ResponseEntity.ok().body(response);
   }
   
 }
